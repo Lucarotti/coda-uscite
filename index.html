@@ -1,0 +1,92 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Coda Uscite</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one narrow legal column, three anchored sections (#app, #terms, #privacy) */
+:root{
+  --bg:#f6f5f8; --fg:#1d1a22; --muted:#5f5a68; --line:#dcd8e2; --accent:#b0325c; --chip:#ece8f1;
+  --display:"Archivo",system-ui,sans-serif; --body:"Source Serif 4",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141218;--fg:#ece9f1;--muted:#a59fb0;--line:#2e2a36;--accent:#ee7fa3;--chip:#211e27;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141218;--fg:#ece9f1;--muted:#a59fb0;--line:#2e2a36;--accent:#ee7fa3;--chip:#211e27;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:17px/1.65 var(--body)}
+.wrap{max-width:44rem;margin:0 auto;padding-block:48px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15}
+h1{font-size:2.4rem;font-weight:800;margin:0 0 .4rem;letter-spacing:-.01em}
+h2{font-size:1.45rem;font-weight:800;margin:0 0 .25rem}
+h3{font-size:1.02rem;font-weight:500;margin:1.6rem 0 .3rem}
+.lead{color:var(--muted);margin:0}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 8px}
+nav a{font:500 .85rem var(--display);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--fg);background:var(--chip);padding:7px 12px;border-radius:6px}
+nav a:hover,nav a:focus-visible{color:var(--accent);outline:2px solid var(--accent);outline-offset:1px}
+section{border-top:1px solid var(--line);padding-top:32px;margin-top:40px;scroll-margin-top:16px}
+.meta{font:500 .8rem var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+p,li{max-width:65ch}
+ul{padding-left:1.2rem}
+code{font:.9em ui-monospace,Consolas,monospace;background:var(--chip);padding:1px 5px;border-radius:4px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+</style>
+</head><body>
+
+<div class="wrap">
+  <header>
+    <h1>Coda Uscite</h1>
+    <p class="lead">Personal desktop tool that uploads the owner's own short videos as drafts to the owner's own TikTok accounts.</p>
+    <nav>
+      <a href="#app">About</a>
+      <a href="#terms">Terms of Service</a>
+      <a href="#privacy">Privacy Policy</a>
+    </nav>
+  </header>
+
+  <section id="app">
+    <h2>About the app</h2>
+    <p class="meta">Desktop · single operator · not offered to the public</p>
+    <p>Coda Uscite is a small script that runs on its owner's computer. It reads a schedule of finished video edits and, at the planned time, sends each video to the TikTok inbox of one of the owner's accounts as a draft. The owner then opens TikTok, reviews the draft and publishes it by hand.</p>
+    <h3>What it uses from TikTok</h3>
+    <ul>
+      <li><strong>Login Kit</strong> with <code>user.info.basic</code>, to know which of the owner's accounts is connected.</li>
+      <li><strong>Content Posting API</strong> with <code>video.upload</code>, to upload a video as a draft to that account's inbox.</li>
+    </ul>
+    <p>The app does not read messages, follow or comment on other accounts, collect data about other users, or publish anything without the owner's review in the TikTok app.</p>
+    <p>Contact: <code>vhshorror.edit@gmail.com</code></p>
+  </section>
+
+  <section id="terms">
+    <h2>Terms of Service</h2>
+    <p class="meta">Effective 6 November 2026</p>
+    <h3>1. Who may use it</h3>
+    <p>Coda Uscite is a private tool. Only its owner uses it, and only with TikTok accounts the owner controls. No account, subscription or service is offered to anyone else.</p>
+    <h3>2. Content</h3>
+    <p>Every video uploaded through the app is created by the owner. The owner is responsible for that content and for following TikTok's Community Guidelines and Terms of Service.</p>
+    <h3>3. How uploads work</h3>
+    <p>Videos are sent as drafts. Nothing becomes public until the owner publishes it inside the TikTok app.</p>
+    <h3>4. Access</h3>
+    <p>Access to a TikTok account is granted through TikTok's own login screen and can be revoked at any time from the TikTok app under Settings and privacy, Security and permissions, Apps and services permissions.</p>
+    <h3>5. No warranty</h3>
+    <p>The tool is provided as is, for personal use, without any warranty.</p>
+    <h3>6. Changes</h3>
+    <p>These terms may be updated. The date above shows the current version.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy Policy</h2>
+    <p class="meta">Effective 6 November 2026</p>
+    <h3>Data the app handles</h3>
+    <ul>
+      <li>The access token TikTok issues when the owner connects one of their accounts.</li>
+      <li>Basic profile information of that account (open ID, display name, avatar), used only to show which account is connected.</li>
+      <li>The owner's own video files and captions, sent to TikTok as drafts.</li>
+    </ul>
+    <h3>Where it is stored</h3>
+    <p>Tokens and settings stay in a local file on the owner's computer. They are not sent to any server other than TikTok's API.</p>
+    <h3>Sharing</h3>
+    <p>No data is sold, shared with third parties or used for advertising. The app does not collect data about any other TikTok user.</p>
+    <h3>Retention and deletion</h3>
+    <p>Data is kept only while the account stays connected. Disconnecting the app in TikTok, or deleting the local settings file, removes access and the stored token.</p>
+    <h3>Contact</h3>
+    <p>Questions about this policy: <code>vhshorror.edit@gmail.com</code></p>
+  </section>
+</div>
+</body></html>
